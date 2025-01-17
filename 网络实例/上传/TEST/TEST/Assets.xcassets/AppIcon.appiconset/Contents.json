@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TAB栏切换</title>
+		<style type="text/css">
+			li {
+				display: inline;
+			}
+
+			.div_head {
+				width: 800px;
+				background-color: #CCCCCC;
+				font-size: 20px;
+				border: 2px solid #9900CC;
+			}
+
+			.li_current {
+				background-color: #00FFFF;
+				font-size: 30px;
+			}
+
+			.div_content {
+				width: 800px;
+				height: 800px;
+				font-size: 18px;
+				border: 2px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div_head">
+			<ul>
+				<li class="li_current">校园动态</li>
+				<li>媒体报道</li>
+				<li>校内公告</li>
+				<li>校外公告</li>
+			</ul>
+		</div>
+		<div class="div_content">
+			<div>
+				校园动态AAAAAAAAAAAAAAA
+			</div>
+			<div style="display: none;">
+				媒体报道BBBBBBBBBBBBBBB
+			</div>
+			<div style="display: none;">
+				校内公告CCCCCCCCCCCCCCC
+			</div>
+			<div style="display: none;">
+				校外公告DDDDDDDDDDDDDDD
+			</div>
+		</div>
+		<script type="text/javascript">
+			// 获取四个li元素，用循环绑定单击事件
+			var li_list = document.getElementsByTagName("li");
+			for (var i = 0; i < li_list.length; i++) {
+				li_list[i].onclick = changeTab;
+			}
+			// 获取四个内容div
+			var divs = document.getElementsByClassName("div_content")[0].getElementsByTagName("div")
+			console.log(divs.length)
+			function changeTab() {
+				// 标签标题和内容切换
+				// 先判断一下，当前li是否为鼠标单击的那个 
+				for (var i = 0; i < li_list.length; i++) {
+					if (li_
